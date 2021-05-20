@@ -8,7 +8,7 @@ SIM is a deflationary token deployed on the Binance Smart Chain under contract [
 
 The deflation occurs by burning 5% off every transaction, which not only limits the supply but incentivises holding it due to the increasing rarity.
 
-The initial token supply was 2 billion SIM. 1 billion was sent to [0x0](https://bscscan.com/tx/0xaa8547a7348357d7a064910691ac8596ad981ffcb3ebeb71436326d60446519a) for burning. 0.5 billion was sent to the [PancakeSwap liquidity pool](https://bscscan.com/tx/0x5c1e02cafa29307fa6eb620a650cd2a7084387e994a0e328f4d96f5716cb67a4), and the other 0.5 billion will be distributed to upcoming exchange liquidity pools. Please contact the email below for collaboration inqueries.
+The initial token supply was 2 billion SIM. 1 billion was sent to [0x0](https://bscscan.com/tx/0xaa8547a7348357d7a064910691ac8596ad981ffcb3ebeb71436326d60446519a) for burning. 0.75 billion was sent to the [PancakeSwap liquidity pool](https://bscscan.com/tx/0x5c1e02cafa29307fa6eb620a650cd2a7084387e994a0e328f4d96f5716cb67a4), and the other 0.25 billion will be distributed to upcoming exchange liquidity pools. Please contact the email below for collaboration inqueries.
 
 ## Eco-friendly Finance
 
