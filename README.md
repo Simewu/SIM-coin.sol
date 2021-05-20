@@ -24,6 +24,8 @@ In the "From" field, select the token you'd like to transfer, then in the "To" f
 ```
 If the transaction fails, be sure to incrementally increase the slippage percentage within the PancakeSwap settings. At the time of writing this, 6% is the minimum slippage for a successful transaction.
 
+## Contact
+
 Please direct all inquiries to simcoinofficial@gmail.com.
 
 We would love to hear from you.
