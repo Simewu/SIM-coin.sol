@@ -1,12 +1,13 @@
-pragma solidity >=0.4.16 <0.9.0;
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.0;
 
-contract ERC20Interface {
-    function totalSupply() public view returns (uint256);
-    function balanceOf(address tokenOwner) public view returns (uint256 balance);
-    function allowance(address tokenOwner, address spender) public view returns (uint256 remaining);
-    function transfer(address to, uint256 tokens) public returns (bool success);
-    function approve(address spender, uint256 tokens) public returns (bool success);
-    function transferFrom(address from, address to, uint256 tokens) public returns (bool success);
+abstract contract ERC20Interface {
+    function totalSupply() public virtual view returns (uint256);
+    function balanceOf(address tokenOwner) public virtual view returns (uint256 balance);
+    function allowance(address tokenOwner, address spender) public virtual view returns (uint256 remaining);
+    function transfer(address to, uint256 tokens) public virtual returns (bool success);
+    function approve(address spender, uint256 tokens) public virtual returns (bool success);
+    function transferFrom(address from, address to, uint256 tokens) public virtual returns (bool success);
 
     event Transfer(address indexed from, address indexed to, uint256 tokens);
     event Approval(address indexed tokenOwner, address indexed spender, uint256 tokens);
@@ -35,45 +36,53 @@ contract Coin is ERC20Interface, SafeMath {
     string public name = "SIM";
     string public symbol = "SIM";
     uint8 public decimals = 18;
-    uint256 public _totalSupply = 21000000000000000000000000; // 21 million coins
+    uint256 public _totalSupply = 2000000000000000000000000000; // 2 billion SIM in supply
 
     mapping(address => uint256) balances;
     mapping(address => mapping(address => uint256)) allowed;
 
-    constructor() public {
+    constructor() {
         balances[msg.sender] = _totalSupply;
         emit Transfer(address(0), msg.sender, _totalSupply);
     }
 
-    function totalSupply() public view returns (uint256) {
+    function totalSupply() public override view returns (uint256) {
         return _totalSupply - balances[address(0)];
     }
 
-    function balanceOf(address tokenOwner) public view returns (uint256 balance) {
+    function balanceOf(address tokenOwner) public override view returns (uint256 balance) {
         return balances[tokenOwner];
     }
 
-    function allowance(address tokenOwner, address spender) public view returns (uint256 remaining) {
+    function allowance(address tokenOwner, address spender) public override view returns (uint256 remaining) {
         return allowed[tokenOwner][spender];
     }
+    
+    function _transfer(address from, address to, uint256 tokens) private returns (bool success) {
+        uint256 amountToBurn = safeDiv(tokens, 20); // 5% of the transaction shall be burned
+        uint256 amountToTransfer = safeSub(tokens, amountToBurn);
+        
+        balances[from] = safeSub(balances[from], tokens);
+        balances[0x0000000000000000000000000000000000000000] = safeAdd(balances[0x0000000000000000000000000000000000000000], amountToBurn);
+        balances[to] = safeAdd(balances[to], amountToTransfer);
+        return true;
+    }
 
-    function transfer(address to, uint256 tokens) public returns (bool success) {
-        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
-        balances[to] = safeAdd(balances[to], tokens);
+    function transfer(address to, uint256 tokens) public override returns (bool success) {
+        _transfer(msg.sender, to, tokens);
         emit Transfer(msg.sender, to, tokens);
         return true;
     }
 
-    function approve(address spender, uint256 tokens) public returns (bool success) {
+    function approve(address spender, uint256 tokens) public override returns (bool success) {
         allowed[msg.sender][spender] = tokens;
         emit Approval(msg.sender, spender, tokens);
         return true;
     }
 
-    function transferFrom(address from, address to, uint256 tokens) public returns (bool success) {
-        balances[from] = safeSub(balances[from], tokens);
+    function transferFrom(address from, address to, uint256 tokens) public override returns (bool success) {
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
-        balances[to] = safeAdd(balances[to], tokens);
+        _transfer(from, to, tokens);
         emit Transfer(from, to, tokens);
         return true;
     }
