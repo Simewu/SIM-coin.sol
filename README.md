@@ -16,7 +16,7 @@ The goal of this project was to be lightweight and built on a proof-of-stake (Po
 
 ## How to Buy
 
-Using the [TrustWallet](https://trustwallet.com/) app (or any Smart Chain wallet), navigate to the DApp: [PancakeSwap](https://exchange.pancakeswap.finance/), and Connect your wallet by selecting "Connect".
+Using the [TrustWallet](https://trustwallet.com/) app (or any Smart Chain wallet), navigate to the DApp: [PancakeSwap](https://exchange.pancakeswap.finance/), and connect your wallet by selecting "Connect".
 
 In the "From" field, select the token you'd like to transfer, then in the "To" field, enter the smart contract for SIM:
 ```
