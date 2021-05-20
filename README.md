@@ -17,8 +17,12 @@ The goal of this project was to be lightweight and built on a proof-of-stake (Po
 
 Using the [TrustWallet](https://trustwallet.com/) app (or any Smart Chain wallet), navigate to the DApp: [PancakeSwap](https://exchange.pancakeswap.finance/), and Connect your wallet by selecting "Connect".
 
-In the "From" field, select the token you'd like to transfer, then in the "To" field, enter the smart contract for SIM: `0xF3a2A13E4c0C3FE7BA7ceFB8f272e9653eaE528c`. If the transaction fails, be sure to incrementally increase the slippage percentage within the PancakeSwap settings. At the time of writing this, 6% is the minimum slippage for a successful transaction.
+In the "From" field, select the token you'd like to transfer, then in the "To" field, enter the smart contract for SIM:
+```
+0xF3a2A13E4c0C3FE7BA7ceFB8f272e9653eaE528c
+```
+If the transaction fails, be sure to incrementally increase the slippage percentage within the PancakeSwap settings. At the time of writing this, 6% is the minimum slippage for a successful transaction.
 
----
+Please direct all inquiries to simcoinofficial@gmail.com.
 
-Please direct all inquiries to simcoinofficial@gmail.com. We would love to hear from you.
+We would love to hear from you.
