@@ -1,4 +1,4 @@
-# SIM Cards
+# SIM
 
 SIM cards are deflationary tokens deployed on the Binance Smart Chain under contract [0xF3a2A13E4c0C3FE7BA7ceFB8f272e9653eaE528c](https://bscscan.com/token/0x5df196e555b57608a367e54da2e4abc830d0385a).
 
