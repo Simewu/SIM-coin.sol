@@ -26,7 +26,7 @@ If the transaction fails, be sure to incrementally increase the slippage percent
 
 ## How to Contribute
 
-The PancakeSwap liquidity pool is what determines the price of SIM. By contributing a combination of both BNB and SIM to the pool, this will allow the exchange enough liquidity to swap between the tokens in higher volumes. Not only is this beneficial to the token by reducing the slippage, but it also gives all contributors rewards in the form of Pancake LPs. When the demand for the token is high, contributors will see high profitability.
+The PancakeSwap liquidity pool is what determines the price of SIM. By contributing a combination of both BNB and SIM to the pool, this will allow the exchange of enough liquidity to swap between the tokens in higher volumes. Not only is this beneficial to the token by reducing the slippage, but it also gives all contributors rewards in the form of Pancake LPs. When the demand for the token is high, contributors will see high profitability.
 
 To become a liquidity pool contributor, navigate to the "Liquidity" tab in PancakeSwap. Similar to token swapping, paste the contract address for SIM, select the amount of SIM and another token to contribute, then select the "Supply" button.
 
