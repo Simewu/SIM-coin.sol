@@ -1,5 +1,7 @@
 pragma solidity >=0.4.16 <0.9.0;
 
+// This is an example of a simple solidity coin following the ERC20 standard.
+
 contract ERC20Interface {
     function totalSupply() public view returns (uint256);
     function balanceOf(address tokenOwner) public view returns (uint256 balance);
